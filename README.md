@@ -2,7 +2,11 @@
 
 Lớp **L3B**. Repo nhóm cho bài Day 05: thiết kế UX khi AI sai và mức tự chủ của trợ lý học bài trong trang khoá học.
 
-Đây là **bản khởi tạo**, chưa phải bài nộp hoàn chỉnh. Nhóm gồm Lê Thanh Tùng, Cấn Xuân Nghĩa và Nguyễn Mạnh Hùng; mã học viên nằm ở đầu [spec.md](spec.md). Chỉ ghi việc đã làm sau khi người phụ trách thực hiện và giải thích được phần đó.
+Đây là **bài đang làm**, chưa phải bài nộp hoàn chỉnh. Nhóm gồm Lê Thanh Tùng, Cấn Xuân Nghĩa và Nguyễn Mạnh Hùng; mã học viên nằm ở đầu [spec.md](spec.md). Chỉ ghi việc đã làm sau khi người phụ trách thực hiện và giải thích được phần đó.
+
+**Phần TV3 đã có:** [prototype bấm được](prototype/README.md), hai ảnh đánh số và `spec.md` §5. Xem [HANDOFF.md](HANDOFF.md) để chia phần TV1/TV2, đối chiếu hai ca rủi ro và chốt mức tự chủ đang được dựng.
+
+Mở demo sau khi tải repo: bấm đúp `prototype/index.html`, hoặc chạy `open prototype/index.html` trên Mac. Không cần deploy, npm hay API key. Đây là bản mô phỏng; chưa gửi TA thật hoặc gọi AI thật.
 
 ## Nộp bài ở đâu?
 

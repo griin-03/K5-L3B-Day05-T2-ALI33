@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>ALI33 · Trợ lý học bài</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="fixtures.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="ALI33, trang đầu"><span class="brand-icon">a.</span><span>ali33<span class="brand-sub">learning room</span></span></a>
+      <div class="sidebar-label">KHÔNG GIAN HỌC TẬP</div>
+      <nav class="main-nav" aria-label="Chọn màn hình">
+        <button class="nav-button selected" data-view="student"><span aria-hidden="true">◈</span> Trợ lý học bài</button>
+        <button class="nav-button" data-view="ta"><span aria-hidden="true">▤</span> Hàng chờ TA <span id="queue-count" class="count">0</span></button>
+      </nav>
+      <div class="course-nav">
+        <div class="sidebar-label">NHẬP MÔN PHÂN TÍCH DỮ LIỆU</div>
+        <div class="lesson done"><span>01</span> Buổi 1 đã mở <span class="lesson-check">✓</span></div>
+        <div class="lesson done"><span>02</span> Buổi 2 đã mở <span class="lesson-check">✓</span></div>
+        <div class="lesson active"><span>03</span> Thống kê mô tả</div>
+        <div class="lesson muted"><span>04</span> Trực quan hoá dữ liệu</div>
+        <div class="lesson muted"><span>…</span> Các buổi sau chưa mở</div>
+      </div>
+      <div class="sidebar-note"><span class="tiny-star">✳</span><strong>Hiểu từng bước.</strong><p>Giữ quyền quyết định, kể cả khi trợ lý chưa có câu trả lời.</p></div>
+      <div class="sidebar-footer"><span class="avatar">A</span><div>Học viên mẫu<small>Nhóm ALI33 · T2 Giáo dục</small></div></div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">Khoá học <span>/</span> Buổi 03 <span>/</span> <strong id="view-label">Trợ lý học bài</strong></div>
+        <div class="top-actions">
+          <span class="demo-label">Bản mô phỏng · dữ liệu dựng</span>
+          <button id="annotation-toggle" class="text-button" aria-pressed="false">Chú thích</button>
+          <button id="reset-button" class="text-button">Làm lại demo</button>
+        </div>
+      </header>
+
+      <main id="student-view">
+        <section class="page-heading"><div><p class="eyebrow">BUỔI 03 / THỐNG KÊ MÔ TẢ</p><h1>Cùng gỡ chỗ đang vướng.</h1><p>Gợi ý vừa đủ. Căn cứ rõ ràng. Bạn vẫn tự làm bài.</p></div><span class="lesson-pill">Đang học <span>03 / 10</span></span></section>
+        <div class="study-grid">
+          <section class="conversation" aria-label="Hội thoại với trợ lý">
+            <div class="conversation-heading"><span class="assistant-mark">✳</span><div><strong>Trợ lý học bài</strong><small>Giải thích trong tài liệu buổi đã mở</small></div><span class="auto-pill">Gợi ý từng bước</span></div>
+            <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+            <section id="student-requests" class="request-strip" aria-label="Yêu cầu của bạn" aria-live="polite"></section>
+            <div id="conversation-status" class="conversation-status" hidden></div>
+            <form id="composer" class="composer">
+              <label class="sr-only" for="question">Câu hỏi của bạn</label>
+              <textarea id="question" rows="2" maxlength="1200" placeholder="Bạn đang vướng ở đâu? Dùng câu hỏi và dữ liệu dựng…"></textarea>
+              <div class="composer-bottom"><span>Enter để gửi · Shift + Enter xuống dòng</span><button class="send-button" type="submit" aria-label="Gửi câu hỏi">Gửi <span aria-hidden="true">↑</span></button></div>
+            </form>
+            <p class="conversation-footnote">Phản hồi được mô phỏng theo kịch bản. Không gọi AI hay gửi dữ liệu ra ngoài.</p>
+          </section>
+
+          <aside class="context-column" aria-label="Tài liệu và trạng thái khoá học">
+            <section class="context-card" data-note="1"><div class="card-title"><span aria-hidden="true">▤</span><h2>Tài liệu đang dùng</h2><span class="small-tag">Buổi 3</span></div><p class="card-description">Mở đúng mục để tự đối chiếu.</p><div id="source-list" class="source-list"></div><div class="source-footer">Chỉ có mã mục §3.1–§3.5. Không có “slide 12”.</div></section>
+            <section class="context-card course-facts"><h2>Bài tập & hỗ trợ</h2><div class="fact"><span>Bài tập 3</span><span class="status-pill amber">Đang mở</span></div><strong class="deadline">23:59 · 13/11/2026</strong><p>Trợ lý chỉ gợi ý bước đầu, không giải hộ hoặc xác nhận đáp số.</p><div class="divider"></div><div class="fact"><span>Giờ TA</span><strong>08:00–22:00</strong></div><label class="clock-label" for="demo-clock">Giờ mô phỏng</label><select id="demo-clock"><option value="22:10">22:10 · Ngoài giờ TA</option><option value="10:00">10:00 · Trong giờ TA</option></select><p id="ta-availability" class="availability"></p></section>
+            <section class="permission-card"><h2>Quyền quyết định ở bạn</h2><p><span>✓</span> Tra tài liệu, gợi ý có giới hạn</p><p><span>↗</span> Chuyển TA sau khi bạn xác nhận</p><p><span>▣</span> FAQ cả lớp cần TA duyệt</p></section>
+            <section id="student-faq" aria-label="FAQ đã được duyệt"></section>
+          </aside>
+        </div>
+      </main>
+
+      <main id="ta-view" hidden>
+        <section class="page-heading"><div><p class="eyebrow">KHÔNG GIAN TA / MÔ PHỎNG VAI TRÒ</p><h1>Xem căn cứ trước khi duyệt.</h1><p>Hàng chờ này chỉ tồn tại trên trình duyệt demo, chưa thông báo TA thật.</p></div><span class="lesson-pill">Buổi 03</span></section>
+        <div class="ta-grid"><section class="queue-panel"><div class="panel-heading"><h2>Câu hỏi cần xem</h2><span id="ta-queue-total" class="small-tag">0 yêu cầu</span></div><div id="ta-requests"></div></section><section id="ta-detail" class="review-panel" aria-label="Chi tiết duyệt"></section></div>
+      </main>
+      <footer class="workspace-footer"><span>ALI33 · Thiết kế cho lúc AI sai</span><span>Fixture 13/11/2026 · Không đăng nhập · Không backend</span></footer>
+    </div>
+  </div>
+
+  <dialog id="source-dialog" class="modal source-modal"><div id="source-content"></div><button class="button primary" data-close="source-dialog">Đóng tài liệu</button></dialog>
+  <dialog id="handoff-dialog" class="modal"><div class="modal-top"><span class="modal-icon">↗</span><button class="icon-button" aria-label="Đóng xác nhận chuyển TA" data-close="handoff-dialog">×</button></div><p class="eyebrow">BẠN QUYẾT ĐỊNH GỬI</p><h2>Chuyển câu hỏi này cho TA?</h2><p class="modal-intro">Kiểm tra nội dung trước khi thêm vào hàng chờ mô phỏng.</p><div id="handoff-preview"></div><label class="check-label"><input type="checkbox" id="simulate-send-failure"><span>Thử ca gửi thất bại · chỉ dùng khi trình bày demo</span></label><p id="handoff-error" class="wait-notice" role="alert" hidden></p><div class="modal-actions" data-note="3"><button class="button secondary" data-close="handoff-dialog">Chưa gửi</button><button id="confirm-handoff" class="button primary">Xác nhận gửi · mô phỏng</button></div></dialog>
+  <dialog id="reset-dialog" class="modal"><p class="eyebrow">BẮT ĐẦU LẠI</p><h2>Xoá dữ liệu demo trên trình duyệt?</h2><p>Hội thoại, yêu cầu và FAQ mô phỏng sẽ được xoá. Bạn có thể bắt đầu lại từ các ca gợi ý.</p><div class="modal-actions"><button class="button secondary" data-close="reset-dialog">Giữ lại</button><button id="confirm-reset" class="button primary">Làm lại demo</button></div></dialog>
+  <dialog id="feedback-dialog" class="modal"><form id="feedback-form"><p class="eyebrow">PHẢN HỒI CỤ THỂ</p><h2>Bạn thấy phần nào chưa đúng?</h2><p>Phản hồi trước vẫn được giữ để đối chiếu. Chưa tự gửi TA.</p><label class="field-label" for="feedback-text">Chỗ cần xem lại</label><textarea id="feedback-text" class="modal-input" maxlength="600" rows="3" required placeholder="Ví dụ: câu so sánh trong §3.3…"></textarea><div class="modal-actions"><button type="button" class="button secondary" data-close="feedback-dialog">Huỷ</button><button class="button primary" type="submit">Gửi phản hồi trong demo</button></div></form></dialog>
+  <dialog id="method-dialog" class="modal"><form id="method-form"><p class="eyebrow">TỰ KIỂM PHƯƠNG PHÁP</p><h2>Bạn đã thử những bước nào?</h2><p>Chỉ đối chiếu cách làm; không xác nhận đáp số hoặc chấm bài chính thức.</p><label class="field-label" for="method-text">Các bước đã thử · dữ liệu dựng</label><textarea id="method-text" class="modal-input" maxlength="600" rows="3" required placeholder="Ví dụ: em sắp xếp dữ liệu rồi tìm vị trí giữa…"></textarea><div class="modal-actions"><button type="button" class="button secondary" data-close="method-dialog">Huỷ</button><button class="button primary" type="submit">Đối chiếu phương pháp</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

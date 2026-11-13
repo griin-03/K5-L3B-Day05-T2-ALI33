@@ -2,13 +2,13 @@
 
 **Lớp:** L3B · **Bàn / zone:** Chưa cập nhật · **Track:** T2 — Giáo dục
 
-| Họ và Tên | Mã Học Viên | Việc đã làm |
-|---|---|---|
-| Nguyễn Mạnh Hùng | 2A202603819 | Product & Risk Lead | Chủ trì phạm vi sản phẩm, quản lý rủi ro, kiểm thử |
-| Cấn Xuân Nghĩa | 2A202603805 | UX & Autonomy Lead | Thiết kế cách AI giao tiếp, xử lý sai sót và kiểm soát quyền tự chủ |
-| Lê Thanh Tùng | 2A202603852 | Prototype & UI Lead |Xây dựng prototype tương tác, thể hiện các quyết định thiết kế của nhóm |
+| Họ và Tên | Mã Học Viên | Vai trò | Việc đã làm |
+|---|---|---|---|
+| Nguyễn Mạnh Hùng | 2A202603852 | TV1 — Product & Risk Lead | Chủ trì phạm vi sản phẩm, quản lý rủi ro, kiểm thử |
+| Cấn Xuân Nghĩa | 2A202603805 | TV2 — UX & Autonomy Lead | Thiết kế cách AI giao tiếp, xử lý sai sót và kiểm soát quyền tự chủ |
+| Lê Thanh Tùng | 2A202603819 | TV3 — Prototype & UI Lead | Dựng hai màn hình, xác nhận/rút/duyệt, kiểm tra Chrome, hai ảnh đánh số và §5; Codex hỗ trợ |
 
-> Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Danh sách đã đủ 3 người; nhóm cần xác nhận bàn/zone, chốt thiết kế và cập nhật đóng góp thực tế. Hướng dẫn bắt đầu và cách nộp nằm trong [README](README.md).
+> Bài đang làm: đã có nội dung TV1/TV2 và bản dựng TV3. Nhóm cần xác nhận bàn/zone, thống nhất mã ca giữa §2–§4, bấm chéo và ghi demo thực tế. Xem [phân công và bàn giao](HANDOFF.md).
 
 ## §1. Lát cắt & phạm vi
 
@@ -306,9 +306,67 @@ Hai luồng này xử lý một lỗi mà việc chỉnh câu chữ không thể
 ---
 
 ## §5. Prototype  (chặng 5)
-- Link hoặc file · công cụ · phần nào mock · có lời gọi AI thật không.
-- 1–2 ảnh có đánh số; mỗi số: thể hiện gì · nguyên tắc HAX/PAIR nào · mức tự chủ nào.
-- Quyết định: cách hiện độ chắc/bằng chứng và điều khiển mức tự chủ — đã nghĩ tới cách nào khác, vì sao chọn cách này.
+
+**Phụ trách: Lê Thanh Tùng — TV3.** File [prototype/index.html](prototype/index.html), hướng dẫn chạy và bấm demo tại [prototype/README.md](prototype/README.md). Tải repo rồi mở file HTML bằng trình duyệt; không bắt buộc deploy. Dùng HTML/CSS/JavaScript thuần, có Codex hỗ trợ triển khai.
+
+### 5.1. Luồng đã dựng
+
+Chỉ có **hai màn hình**: học viên hỏi bài và TA xem hàng chờ. Bản dựng tập trung vào hai ca để TV1/TV2 đối chiếu:
+
+- **UI-A — Tài liệu có câu sai:** học viên hỏi mệnh đề “độ lệch chuẩn luôn nhỏ hơn phương sai” ở §3.3. Trợ lý chỉ ra câu cần xem lại, đưa ví dụ kiểm tra 0,25 → 0,5, cho mở nguồn gốc. Muốn gửi TA phải xem trước và xác nhận. Ngoài giờ có cảnh báo TA trở lại từ 08:00 hôm sau, chưa cam kết kịp hạn bài 3; không tự gia hạn hoặc khẳng định đã sửa tài liệu chính thức.
+- **UI-B — Xin xác nhận đáp số bài đang mở:** không đưa hoặc xác nhận kết quả. Trợ lý chỉ gợi ý sắp xếp dữ liệu và xác định vị trí giữa theo §3.2; bấm ẩn/khôi phục không tạo thêm các bước thành lời giải. Có đường sửa câu hỏi hoặc xin TA xem.
+
+Đã đối chiếu §3–§4 mới của Nghĩa: UI-A tương ứng **S5**, UI-B tương ứng **S3**. §2 cần TV1 thống nhất mã và hai ca ưu tiên; không coi việc dựng trước hai ca này là cả nhóm đã duyệt M1. Hai đoạn phản hồi chính dùng câu chữ TV2 đã viết. Nút **Xem ví dụ** mở phản ví dụ riêng; **Báo phản hồi chưa đúng** nhận ý kiến cụ thể và bổ sung lời đối chiếu mà không xoá câu trước. **Gợi ý bước đầu** giữ một mức gợi mở; **Kiểm tra cách làm của tôi** nhận các bước học viên đã thử rồi đối chiếu phương pháp, không xác nhận kết quả số.
+
+Hộp chuyển TA còn có ca thử lỗi gửi: khi bật, yêu cầu vẫn ở bản nháp, hàng chờ không tăng, không nói đã báo TA. Bỏ chọn ca lỗi và bấm thử lại mới tạo yêu cầu mô phỏng. Đoạn nguồn và lý do nghi vấn có trong bản xem trước, đúng thông tin sẽ được lưu với yêu cầu.
+
+Ngoài hai ca chính, ô nhập hỗ trợ một số ca mô phỏng về hỏi mơ hồ, nguồn không có, buổi chưa mở, tự chê bản thân, hạn bài/Excel và bài 2 đã đóng. Ca chưa nhận diện đi tới phản hồi chưa có căn cứ, không đoán câu trả lời.
+
+### 5.2. Thể hiện mức tự chủ trên màn hình
+
+Đây là cấu hình **đang hiện thực**, TV2 cần đối chiếu và chốt vào §4:
+
+| Hành động | Điều người xem bấm/thấy |
+|---|---|
+| Tra tài liệu — tự làm, chỉ đọc | Mã mục mở được nguyên văn. Đóng nguồn không sửa dữ liệu; §3.3 vẫn giữ câu gốc và nhãn cần xem lại |
+| Gợi ý — tự làm trong phạm vi | Chỉ gợi bước đầu với bài đang mở; có ẩn/khôi phục và sửa câu hỏi. Ẩn không thu hồi nội dung đã đọc |
+| Chuyển TA — cần học viên xác nhận | Xem trước câu hỏi, mã mục, dữ liệu gửi và giờ hỗ trợ. Chọn Chưa gửi thì hàng chờ không tăng. Sau xác nhận có thẻ yêu cầu; rút được trước khi TA bắt đầu xác minh |
+| Đăng FAQ — cần TA duyệt | TA xem căn cứ, xác minh phản hồi, đánh dấu đồng ý rồi mới bấm đăng. FAQ chỉ hiện ở phía học viên sau bước đăng; gỡ có cảnh báo không thu hồi những gì đã đọc |
+| Việc cấm | Không có hành động đưa/xác nhận đáp số bài đang mở, đổi hạn nộp, tự sửa tài liệu gốc hay AI tự công bố FAQ |
+
+### 5.3. Hai ảnh đánh số và nguyên tắc
+
+![Ảnh 1: học viên thấy nguồn có vấn đề, phản hồi giới hạn và yêu cầu TA có thể rút](prototype/screenshots/01-hoc-vien.png)
+
+Ảnh 1 chụp **sau khi học viên xác nhận chuyển**. **[1]** là mã mục và nguồn để tự đối chiếu; **[2]** là phản hồi chỉ rõ câu sai cùng phần trợ lý không được tự làm; **[3]** là trạng thái yêu cầu, cảnh báo ngoài giờ và nút rút. Hộp xác nhận trước đó bấm lại được theo hướng dẫn demo, không nằm trong ảnh này.
+
+![Ảnh 2: TA xem câu gốc và ví dụ, kiểm tra nội dung trước khi duyệt đăng FAQ](prototype/screenshots/02-ta-duyet.png)
+
+Ảnh 2: **[1]** TA đối chiếu câu gốc và ví dụ kiểm tra; **[4]** là bản nháp FAQ, ô đồng ý đã được đánh dấu và nút duyệt đăng. Lúc chụp, bản nháp chưa tự xuất hiện ở phía học viên; vẫn cần bấm đăng.
+
+| Nguyên tắc | Chỗ thể hiện cụ thể |
+|---|---|
+| [HAX G11 — giải thích căn cứ cho hành vi](https://www.microsoft.com/en-us/haxtoolkit/guideline/make-clear-why-the-system-did-what-it-did/) | Ảnh 1/2, **[1]**: mục nguồn mở được, giữ nguyên câu cần xem lại và tách ví dụ kiểm tra khỏi trích dẫn. Người học/TA có thể tự đối chiếu thay vì chỉ tin một nhãn |
+| [HAX G10 — hỏi lại hoặc thu hẹp khi chưa đủ rõ](https://www.microsoft.com/en-us/haxtoolkit/guideline/scope-services-when-in-doubt/) | Ảnh 1, **[2]**: giới hạn việc tự sửa/đăng khi nguồn có vấn đề. Ca “cái độ lệch ấy” hỏi lại trước khi chọn khái niệm; nguồn không có thì đi tới đường hỏi TA |
+| [HAX G9 — hỗ trợ sửa và phục hồi](https://www.microsoft.com/en-us/haxtoolkit/guideline/support-efficient-correction/) | Ảnh 1, **[3]** và dòng Sửa câu hỏi: rút yêu cầu khi chưa xử lý, sửa lại input, ẩn/khôi phục gợi ý. Sau khi TA bắt đầu xác minh, UI nói rõ giới hạn rút |
+
+### 5.4. Lập luận chọn cách hiện
+
+| Quyết định | Cách được chọn và lý do | Phương án đối chiếu, lý do không dùng |
+|---|---|---|
+| Hiện căn cứ và độ chắc | Dùng nhãn theo trạng thái: có căn cứ, cần làm rõ, nguồn có điểm mâu thuẫn; có mã mục mở được. Phù hợp các ca dựng và cho người học tự kiểm | Không dùng “tin cậy 95%”: bản mock không có phép đo/hiệu chuẩn để tạo con số đó |
+| Nguồn có câu sai | Chỉ ra đúng câu, tách ví dụ kiểm tra, giữ nguyên tài liệu và có đường chuyển người | Chỉ thêm câu “AI có thể sai” không ngăn người học học theo tài liệu sai; tự sửa tài liệu vượt bộ tool được cấp |
+| Chuyển TA | Có bước xác nhận và thẻ trạng thái ngay trong hội thoại, thấy dữ liệu gửi, quyền rút và giới hạn ngoài giờ | Tự gửi ngay dễ chuyển cả câu hỏi người học chưa muốn gửi; chỉ nói “hãy hỏi TA” làm mất bối cảnh và không cho thấy bước tiếp |
+| FAQ | Tách bản nháp, xác minh, đồng ý và bấm đăng; phía học viên chỉ thấy FAQ sau duyệt | AI đăng rồi cho gỡ vẫn có thể phát tán kiến thức sai, vì gỡ không làm người đã đọc quên nội dung |
+| Hai màn hình | Màn hình học viên giữ ngữ cảnh học; màn hình TA tập trung căn cứ và quyết định ảnh hưởng cả lớp | Một màn hình trộn mọi nút khiến người học tưởng mình có quyền đăng FAQ; nhiều trang riêng làm ca demo bị phân mảnh |
+
+### 5.5. Phần mock, kiểm tra và giới hạn
+
+Phản hồi là câu soạn sẵn, định tuyến từ khoá trong `fixtures.js`; **không có lời gọi AI thật** và chưa có bằng chứng bonus gọi AI. Dữ liệu lấy từ fixture T2; ví dụ 0,25 → 0,5 là dữ liệu kiểm tra mệnh đề tự dựng, không phải đáp số bài 3. Nhãn căn cứ không phải xác suất đúng của một model.
+
+Hàng chờ, phản hồi TA và FAQ chỉ lưu trong trình duyệt. Chuyển tab TA là mô phỏng vai trò, **chưa phải đăng nhập/phân quyền bảo mật**. Chưa gửi email hay thông báo TA thật. Nút xác minh không sửa tài liệu chính thức. Nếu triển khai thật, các kiểm tra quyền và trạng thái phải được thực thi ở server; nội dung hỗ trợ cần được đánh giá riêng.
+
+Đã kiểm tra **37/37 tình huống** trên Chrome bằng file mở trực tiếp, gồm huỷ/xác nhận/rút, duyệt/gỡ, bài đang mở, căn cứ thiếu, bàn phím và mobile 390px. Không có JavaScript exception hoặc request HTTP ra ngoài trong phiên kiểm tra. Bằng chứng: [QA.md](prototype/QA.md), [qa-results.json](prototype/qa-results.json), hash hai ảnh nằm trong JSON. Chưa kiểm tra Safari/Edge, chưa kiểm thử người dùng thật hoặc AI thật. Kết quả này chưa thay cho vòng bấm chéo của nhóm hay ca lạ trong §7.
 
 ## §6. Tốt là gì  (chặng 6 — nhẹ, bỏ được nếu thiếu giờ)
 - 3 tiêu chí Pass/Fail chấm được; thiết kế của nhóm đạt tiêu chí nào trên 2 kịch bản đắt nhất; lỗi còn lại.

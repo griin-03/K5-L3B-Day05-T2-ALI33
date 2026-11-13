@@ -1,0 +1,170 @@
+{
+  "client_date": "2026-11-13",
+  "verified_at_utc": "2026-11-13T03:53:16.441Z",
+  "browser": "Installed Google Chrome, isolated headless profile; Chrome DevTools Protocol",
+  "mode": "file://, deterministic fixtures; no AI API",
+  "checks": [
+    {
+      "name": "Initial page has four start cases and no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Original source is preserved and flagged",
+      "passed": true
+    },
+    {
+      "name": "Source dialog can be dismissed with Escape",
+      "passed": true
+    },
+    {
+      "name": "Wrong material receives a counterexample and limited claims",
+      "passed": true
+    },
+    {
+      "name": "Example is separately inspectable and not presented as a homework answer",
+      "passed": true
+    },
+    {
+      "name": "Request is not queued before confirmation",
+      "passed": true
+    },
+    {
+      "name": "Outside-hours confirmation discloses deadline conflict",
+      "passed": true
+    },
+    {
+      "name": "Handoff preview includes the actual source excerpt and reason",
+      "passed": true
+    },
+    {
+      "name": "Cancel confirmation leaves queue empty",
+      "passed": true
+    },
+    {
+      "name": "Simulated send failure keeps draft without claiming delivery",
+      "passed": true
+    },
+    {
+      "name": "Confirmed request appears once and can be withdrawn",
+      "passed": true
+    },
+    {
+      "name": "Refresh preserves the local demo request",
+      "passed": true
+    },
+    {
+      "name": "FAQ publishing is disabled before TA verification",
+      "passed": true
+    },
+    {
+      "name": "TA verification alone does not publish FAQ",
+      "passed": true
+    },
+    {
+      "name": "Publish becomes available only after explicit review acknowledgement",
+      "passed": true
+    },
+    {
+      "name": "Approved FAQ and mock TA reply reach the student screen",
+      "passed": true
+    },
+    {
+      "name": "FAQ removal hides it without claiming readers can unlearn it",
+      "passed": true
+    },
+    {
+      "name": "Open assignment neither supplies nor confirms the submitted numbers",
+      "passed": true
+    },
+    {
+      "name": "Student can hide an automatic hint",
+      "passed": true
+    },
+    {
+      "name": "Restoring a hint retains the same limited response",
+      "passed": true
+    },
+    {
+      "name": "First-hint button supplies only the opening step",
+      "passed": true
+    },
+    {
+      "name": "Repeated hint clicks do not progressively reveal a full solution",
+      "passed": true
+    },
+    {
+      "name": "Method-check action asks for learner steps before reviewing",
+      "passed": true
+    },
+    {
+      "name": "Method feedback does not confirm an entered numeric answer",
+      "passed": true
+    },
+    {
+      "name": "Withdrawn request has no handling or publishing actions",
+      "passed": true
+    },
+    {
+      "name": "Specific feedback is acknowledged without erasing the earlier response or auto-sending",
+      "passed": true
+    },
+    {
+      "name": "Ambiguous input asks a clarifying question before choosing a concept",
+      "passed": true
+    },
+    {
+      "name": "Clarification opens the selected concept and flags the bad sentence",
+      "passed": true
+    },
+    {
+      "name": "Mixed deadline query separates supported facts from missing Excel guidance",
+      "passed": true
+    },
+    {
+      "name": "Nonexistent slide is not invented",
+      "passed": true
+    },
+    {
+      "name": "Unopened lesson stays within the supplied course outline",
+      "passed": true
+    },
+    {
+      "name": "Published closed assignment may be fully explained",
+      "passed": true
+    },
+    {
+      "name": "Self-deprecation does not produce a learner-ability judgment",
+      "passed": true
+    },
+    {
+      "name": "Typed HTML remains text and unsupported questions use a fallback",
+      "passed": true
+    },
+    {
+      "name": "Mobile layout does not overflow horizontally",
+      "passed": true
+    },
+    {
+      "name": "Keyboard Enter submits the composer",
+      "passed": true
+    },
+    {
+      "name": "No JavaScript exceptions or external HTTP requests",
+      "passed": true
+    }
+  ],
+  "total": 37,
+  "passed": 37,
+  "external_http_requests": [],
+  "runtime_exceptions": [],
+  "screenshots": [
+    {
+      "file": "prototype/screenshots/01-hoc-vien.png",
+      "sha256": "70d918ad94950cd9d040a7f76078c267de09851de9af85327127a89861733ea9"
+    },
+    {
+      "file": "prototype/screenshots/02-ta-duyet.png",
+      "sha256": "9a3adce480eab84b97f5ee3085a80b3e01c326e4ea5ee10ae1548815439c39f2"
+    }
+  ]
+}
