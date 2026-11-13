@@ -11,18 +11,151 @@
 > Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Danh sách đã đủ 3 người; nhóm cần xác nhận bàn/zone, chốt thiết kế và cập nhật đóng góp thực tế. Hướng dẫn bắt đầu và cách nộp nằm trong [README](README.md).
 
 ## §1. Lát cắt & phạm vi
-- **Lát cắt được giao:** Trong **trợ lý học bài của trang khoá học (kiểu ChatGPT Study mode)**, khi **học viên** đang hỏi bài lúc tối muộn, khi không còn ai để hỏi, **AI giảng kèm trích tài liệu, hỏi lại cho rõ, gợi ý từng bước, hay nói thẳng "tài liệu không có, hỏi giảng viên"**, để học viên hiểu đúng bài mình đang học, không chép đáp án, không học sai mà không biết.
 
-**Nháp phạm vi để nhóm xem và chốt:**
 
-- Không giải hộ hoặc xác nhận đáp số bài tập đang mở, vì người học có thể chép kết quả mà không hiểu; trợ lý chỉ gợi ý bước đầu.
-- Không sửa hạn nộp, gia hạn hoặc tự sửa tài liệu khoá học, vì bốn tool được giao không có quyền đó; thông tin hạn lấy từ trang khoá học, chỗ tài liệu nghi sai chuyển giảng viên xem lại.
-- Không tự công bố câu trả lời chưa được kiểm tra thành FAQ cho cả lớp, vì gỡ bài không thu hồi được những gì nhiều người đã đọc; nhóm phải chốt cơ chế duyệt trước khi đăng.
+### 1.1. Lát cắt của track
+- Không gian làm việc: trợ lý học bài trên trang khoá học.
+- Người dùng: học viên đang học muộn tối, không còn ai để hỏi.
+- AI phải quyết định trong từng tình huống: có nên trích dẫn tài liệu, hỏi lại cho rõ, gợi ý từng bước, chuyển cho TA, hay nói thẳng rằng tài liệu không có và cần hỏi giảng viên.
+- Mục tiêu chính: giúp học viên hiểu đúng bài, không sao chép đáp án, không học sai mà không biết.
+
+
+### 1.2. Sản phẩm thật hôm nay
+- Trong Study mode, AI không đưa đáp án ngay mà sẽ hỏi ngược, gợi ý từng bước và kiểm tra mức độ hiểu bài.
+- Tuy nhiên, AI không có TA/giảng viên đứng sau để tiếp nhận chuyển giao hoặc xác nhận kết quả.
+- Trong hệ thống khoá học của trường, có tài liệu buổi học, lịch bài tập và giờ TA, nhưng không có AI nào được phép tự xác nhận đáp án của bài đang mở.
+- Khi tích hợp AI vào, quyền mới của AI là: đọc tài liệu, trích mục, hỏi lại, gợi ý bước đầu, chuyển câu hỏi cho TA, hoặc nói rõ rằng thông tin không có trong tài liệu.
+
+
+### 1.3. Nếu AI sai, ai chịu và chịu gì?
+- Sai theo hướng “học sai” là đắt nhất: học viên hiểu nhầm nội dung, nộp bài sai, mất điểm và mất niềm tin.
+- Sai ở “hạn nộp” hay “bài đang mở” còn nguy hiểm hơn: AI có thể hứa đáp án hoặc xác nhận sai, dẫn đến nộp lệch và tốn thời gian.
+- Nếu AI nói “đã báo TA” mà thực tế không báo, hoặc nói “slide 12” khi không có dữ liệu, người học sẽ tin và hành động theo đó.
+
+
+> Vậy, lỗi của AI ở đây không chỉ là “nói sai”, mà là “dẫn người học đi sai hướng” trong khi họ đang ở giai đoạn không còn ai để hỏi.
+
+
+### 1.4. Ba thứ tính năng này sẽ không làm là gì?
+- Không tự chốt đáp án bài đang mở: không xác nhận “đáp án là X”.
+- Không giả mạo nguồn hoặc tài liệu không có: không nói “trong slide 12” nếu không có slide 12.
+- Không nhận xét năng lực người học hoặc nói “em học kém” / “em không hiểu” để đánh giá cá nhân.
+
 
 ## §2. Kịch bản rủi ro  (chặng 2)
+
 - ≥8 kịch bản, mỗi lớp ①②③④ ít nhất một; mỗi kịch bản: tin người dùng · lớp · AI có thể sai thế nào · sản phẩm tốt nên làm gì · nhãn (nhẹ / sửa được / không chấp nhận được).
 - Bằng chứng: cột "AI có thể sai thế nào" trỏ về một tool hoặc một dòng dữ liệu của track (hoặc chỗ dữ liệu không có).
 - Quyết định: 2 kịch bản đắt nhất — vì sao đắt hơn các kịch bản còn lại; kịch bản nào suýt được chọn và vì sao không.
+
+
+### 2.1. Các câu hỏi tự trả lời
+1. Với lát cát này, chỗ nào AI bịa được, chỗ nào mơ hồ, chỗ nào vượt thẩm quyền, chỗ nào sai và mất niềm tin ngay?
+
+
+① Bịa / nguồn sự thật:
+
+
+AI nói nội dung buổi chưa học, vì trang khoá học chỉ có tên buổi nhưng không có slide/ghi chú.
+Ví dụ: buổi 4 có tên “Trực quan hoá dữ liệu”, nhưng chưa có tài liệu; AI dễ nói “buổi 4 học biểu đồ cột và Tableau”.
+Đây là lỗi “bịa nội dung chưa học”, rất nguy hiểm vì học viên tin là đúng.
+② Tin nhắn mơ hồ, thiếu:
+
+
+“Em không hiểu phần độ lệch chuẩn là gì ạ”
+“Bài 3 làm tư thế nào ạ”
+“Hạn nộp bài 3 là khi nào?”
+Nếu AI đoán không hỏi lại, nó có thể trả lời quá rộng, hoặc giải thích sai vì không biết học viên đang hỏi về phần nào trong tài liệu.
+③ Ngoài thẩm quyền:
+
+
+Học viên yêu cầu AI xác nhận đáp án bài đang mở.
+Học viên yêu cầu AI “giải hộ luôn cho xong”.
+AI bị ép phải trả lời đáp án, nhưng trong track, AI không có quyền xác nhận đáp án của bài đang mở.
+Đây là chỗ AI phải dừng và ghi rõ: “mình chỉ gợi ý bước đầu, không xác nhận đáp án”.
+④ Sai cái gì mất niềm tin ngay:
+
+
+Nói “đã báo TA” khi chưa báo.
+Nói “slide 12 có ghi…” khi không có slide 12.
+Xác nhận deadline sai vì đọc nhầm dữ liệu.
+Đó là lỗi đắt nhất vì học viên tin, làm theo ngay, và rất khó đảo ngược.
+2. Người dùng thật sẽ nhắn thế nào?
+Học viên hỏi lúc tối muộn, thường:
+viết tắt, thiếu ngữ cảnh
+hỏi gộp nhiều việc cùng lúc
+đang căng thẳng, tự chê mình
+nhắn thiếu dữ kiện, ví dụ: “bài 3 làm chưa ạ” hoặc “giải hộ em phần này”
+Kịch bản nhóm cần mô phỏng đúng sự thật: thiếu thông tin, cạn kiệt thời gian, và đang cần một câu trả lời nhanh nhưng an toàn.
+
+
+3. Với từng kịch bản, một AI làm theo lời người dùng **có thể sai thế nào**? Gọi nhầm tool nào? Làm một việc không đảo được khi lẽ ra phải hỏi? Nói điều dữ liệu không có? Hứa điều không tool nào làm được?
+
+
+- Gọi nhầm tool:
+tra_cuu_tai_lieu trích đoạn sai mục
+goi_y_bai_tap gợi ý quá tay như “đáp án là 6”
+chuyen_TA nói “đã gửi cho TA” dù chưa gửi
+- Làm việc không có quyền:
+khẳng định đáp số bài đang mở
+nói “đây là slide 12” khi không có slide
+- Nói điều dữ liệu không có:
+“Theo tài liệu buổi 4 thì…”
+nhưng thực tế buổi 4 không có giáo án
+- Hứa điều không tool nào làm được:
+“AI sẽ trả lời bạn ngay sau 1 phút” khi không có cơ chế đó
+“mình đã chuyển cho TA” khi chưa chuyển
+Hai chỗ sai đắt nhất
+Chỗ sai đắt nhất 1: AI xác nhận hoặc gợi ý đáp án bài đang mở.
+
+
+Vì học viên sẽ tin và làm theo ngay.
+Sai thì người học học sai, nộp sai, mất điểm, mất niềm tin vào hệ thống.
+Đặc biệt nguy hiểm vì bài đang mở có thể không có đáp án chính thức.
+Chỗ sai đắt nhất 2: AI bịa hoặc nói dữ liệu không có.
+
+
+Ví dụ: “slide 12 có nói…” hoặc “TA đã trả lời…” khi không có căn cứ.
+Đây là lỗi cực kỳ nguy hiểm vì là lỗi hệ thống: AI tạo ra “sự thật” không có thật.
+Học viên không thể tự kiểm vì AI đã “giả nguồn” rất chắc chắn.
+### 2.2. Làm thế nào
+| Câu hỏi mẫu / ví dụ | Lớp | AI có thể sai thế nào | Sản phẩm tốt nên làm gì | Nhãn |
+|---|---|---|---|---|
+| “buổi 4 học gì, có cần chuẩn bị gì không” | ① Nguồn sự thật | Trang khoá học chỉ có tên buổi 4 “Trực quan hoá dữ liệu”, chưa có tài liệu → AI dễ nói chắc chắn “buổi 4 học biểu đồ cột và Tableau” | Nói theo dữ liệu có sẵn, chỉ mô tả tên buổi và nhấn rõ tài liệu chưa có | Sửa được |
+| “em không hiểu trung vị khác trung bình ở đâu ạ” | ② Mơ hồ, thiếu context | AI giải thích quá rộng, không dùng ví dụ trong tài liệu hoặc gộp cả nội dung liên quan khác vào | Hỏi lại ví dụ cụ thể, chỉ giải thích theo mục học đã xác định, không vượt ra ngoài dữ liệu | Nhẹ |
+| “bài 3 làm gì ạ, em đang ngồi tối muộn nên không biết phải bắt đầu từ đâu” | ② Mơ hồ + ③ Ngoài thẩm quyền | AI dễ chốt đáp án hoặc nói “làm theo cách này” mà không nhấn rõ đây là gợi ý bước đầu | Gợi ý từng bước, nói rõ bài đang mở không xác nhận đáp án | Sửa được |
+| “đáp án bài 3 là bao nhiêu ạ” | ③ Ngoài thẩm quyền | AI trả lời thẳng đáp án dù bài vẫn đang mở và không có đáp án chính thức | Từ chối xác nhận đáp án, khuyến khích học viên làm theo công thức hoặc hỏi TA/giảng viên | Không chấp nhận được |
+| “hạn nộp bài 3 là khi nào ạ, em vừa xem lại thấy không chắc” | ① Dữ liệu sai / ② Thiếu context | AI đọc nhầm thời hạn hoặc suy đoán từ bài cũ, dẫn tới kết luận sai | Chỉ lấy thông tin từ trang khoá học, đưa rõ thời hạn và cách xác minh | Nhẹ |
+| “em đọc tài liệu thấy phần §3.4 nói trước khi bỏ outlier cần hỏi có phải lỗi nhập liệu không ạ, có phải cứ bỏ là đúng không” | ② Thiếu context | AI nói chắc chắn “cứ bỏ outlier là đúng” mà không nhắc điều kiện | Trích mục §3.4, nhấn rõ cần xác định đây có phải lỗi nhập liệu hay dữ liệu thật | Sửa được |
+| “slide 12 có ghi là phương sai luôn lớn hơn độ lệch chuẩn đúng không ạ” | ① Nguồn sự thật | AI tin rằng slide 12 tồn tại và trả lời chắc chắn dù không có slide 12 trong dữ liệu | Nói rõ không có nguồn đó, không khẳng định nếu không có căn cứ | Không chấp nhận được |
+| “em đã nhắn cho TA rồi, giờ trả lời chưa ạ” | ③ Ngoài thẩm quyền / ① Nguồn sự thật | AI nói “đã báo TA” dù chưa báo, hoặc giả vờ có phản hồi | Chỉ nói khi thực sự đã chuyển; nếu chưa chuyển, hướng dẫn cách gửi hoặc chờ phản hồi | Không chấp nhận được |
+| “em thấy mình yếu quá, phần này em không hiểu” | ② Mơ hồ + ④ Niềm tin | AI phản hồi tiêu cực hoặc đánh giá năng lực học viên, làm người học mất động lực | Khuyến khích, không phán xét, chỉ giải thích kiến thức và gợi ý cách học | Nhẹ |
+| “giảng viên bảo buổi 5 sẽ học p-value, vậy buổi 5 có bài tập gì không” | ① Nguồn sự thật | AI nói quá chắc chắn “buổi 5 sẽ học p-value” dù trang khoá học chưa có dữ liệu chi tiết | Chỉ nói từ dữ liệu có sẵn, gợi ý chủ đề theo đề cương nhưng không khẳng định quá mức | Sửa được |
+
+
+Những kịch bản trên đều có thể được nhãn theo 3 mức hại:
+
+
+- Nhẹ: người dùng tự thấy và tự sửa.
+- Sửa được: cần công sức, có người gỡ.
+- Không chấp nhận được: sai gây mất niềm tin, học sai, hoặc không thể đảo ngược.
+
+
+Hai kịch bản đắt nhất nên khoanh:
+
+
+1. AI xác nhận đáp án bài đang mở.
+2. AI bịa nguồn / nói “đã báo TA” hoặc “slide 12” khi không có căn cứ.
+
+
+Vì sao đắt hơn các kịch bản còn lại?
+
+
+- Học viên tin ngay, không kiểm lại.
+- Hành động tiếp theo xảy ra ngay.
+- Không có cách sửa dễ dàng sau khi đã tin.
+- Ảnh hưởng trực tiếp đến kết quả học tập và niềm tin.
+
 
 ## §3. UX khi AI sai — người học nhìn thấy gì, làm gì tiếp?
 
