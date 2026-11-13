@@ -1,17 +1,23 @@
 # Bài nộp LAB5 — T2 · Giáo dục · Nhóm ALI33
+
 **Lớp:** L3B · **Bàn / zone:** Chưa cập nhật · **Track:** T2 — Giáo dục
 
 | Họ và Tên | Mã Học Viên | Việc đã làm |
 |---|---|---|
 | Lê Thanh Tùng | 2A202603819 | Chưa cập nhật |
-| Cấn Xuân Nghĩa | 2A202603805  |Chưa cập nhật  |
-|Nguyễn Mạnh Hùng  |2A202603852  |  |
+| Cấn Xuân Nghĩa | 2A202603805 | Chưa cập nhật |
+| Nguyễn Mạnh Hùng | 2A202603852 | Chưa cập nhật |
 
-> Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Nhóm bổ sung đủ 3 thành viên và ghi đúng đóng góp sau khi làm.
+> Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Danh sách đã đủ 3 người; nhóm cần xác nhận bàn/zone, chốt thiết kế và cập nhật đóng góp thực tế. Hướng dẫn bắt đầu và cách nộp nằm trong [README](README.md).
 
 ## §1. Lát cắt & phạm vi
 - **Lát cắt được giao:** Trong **trợ lý học bài của trang khoá học (kiểu ChatGPT Study mode)**, khi **học viên** đang hỏi bài lúc tối muộn, khi không còn ai để hỏi, **AI giảng kèm trích tài liệu, hỏi lại cho rõ, gợi ý từng bước, hay nói thẳng "tài liệu không có, hỏi giảng viên"**, để học viên hiểu đúng bài mình đang học, không chép đáp án, không học sai mà không biết.
-- 3 việc tính năng KHÔNG làm, mỗi việc một câu vì sao.
+
+**Nháp phạm vi để nhóm xem và chốt:**
+
+- Không giải hộ hoặc xác nhận đáp số bài tập đang mở, vì người học có thể chép kết quả mà không hiểu; trợ lý chỉ gợi ý bước đầu.
+- Không sửa hạn nộp, gia hạn hoặc tự sửa tài liệu khoá học, vì bốn tool được giao không có quyền đó; thông tin hạn lấy từ trang khoá học, chỗ tài liệu nghi sai chuyển giảng viên xem lại.
+- Không tự công bố câu trả lời chưa được kiểm tra thành FAQ cho cả lớp, vì gỡ bài không thu hồi được những gì nhiều người đã đọc; nhóm phải chốt cơ chế duyệt trước khi đăng.
 
 ## §2. Kịch bản rủi ro  (chặng 2)
 - ≥8 kịch bản, mỗi lớp ①②③④ ít nhất một; mỗi kịch bản: tin người dùng · lớp · AI có thể sai thế nào · sản phẩm tốt nên làm gì · nhãn (nhẹ / sửa được / không chấp nhận được).
@@ -27,6 +33,16 @@ Với mỗi kịch bản đắt nhất:
 - Lỗi nào sửa câu chữ không cứu được (nếu có), và thiết kế cứu nó thế nào.
 
 ## §4. Mức tự chủ  (chặng 4)
+
+Bốn tool được giao trong T2. Bảng dưới là khung làm việc, **chưa phải mức đã được nhóm chốt**:
+
+| Tool | Việc được giao | Mức tự chủ nhóm chọn | Cần bổ sung trước khi chốt |
+|---|---|---|---|
+| `tra_cuu_tai_lieu` | Tìm đoạn tài liệu kèm mã mục | Chưa chốt | Sai nguồn hoặc nguồn có câu sai thì học viên thấy gì? |
+| `goi_y_bai_tap` | Gửi gợi ý cho một học viên | Chưa chốt | Chặn giải hộ/xác nhận đáp số bài đang mở ở đâu? |
+| `chuyen_TA` | Chuyển câu hỏi và báo giờ TA trả lời | Chưa chốt | Ai xác nhận gửi, TA nhận gì, ngoài giờ hoặc quá hạn thì sao? |
+| `dang_FAQ` | Đăng câu hỏi và trả lời cho cả lớp | Chưa chốt | Ai duyệt nội dung, thấy căn cứ gì; lỗi đã lan tới cả lớp thì xử lý thế nào? |
+
 Với mỗi tool:
 - Mức của nhóm (tự làm / cần người duyệt / cấm). Nếu cần người duyệt: ai duyệt · người duyệt thấy gì · quá hạn thì sao.
 - Lý do theo cost-of-error: sai thì ai chịu gì · đảo lại được không · chờ người thì mất gì.
