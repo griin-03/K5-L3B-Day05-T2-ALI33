@@ -165,6 +165,8 @@ Vì sao đắt hơn các kịch bản còn lại?
 
 ### 3.1. Nguyên tắc quyết định
 
+**Đối chiếu với §2 và prototype:** Hai ca dưới đây là **UX-A (nguồn §3.3 sai)** và **UX-B (xin giải/xác nhận đáp số bài 3 đang mở)**, tương ứng hai luồng `UI-A`/`UI-B` trong `HANDOFF.md`. §2 hiện chưa có mã kịch bản và chưa chọn rõ UX-A là rủi ro trọng tâm; vì vậy **chưa gọi chúng là S5/S3**. TV1 cần bổ sung dòng §3.3 vào §2 nếu nhóm quyết định chọn ca này, sau đó gắn mã thống nhất tại cả §2–§4. Nếu nhóm giữ hai ca đắt nhất như §2 hiện viết (đáp số và bịa nguồn/hành động), cần nêu rằng UX-A là biến thể đặc biệt của rủi ro nguồn sai và giải thích lý do chọn để demo.
+
 **Mục tiêu UX:** Không chỉ giảm số câu trả lời sai, mà làm cho học viên **nhận ra giới hạn của AI, kiểm tra được nguồn, có đường sửa và không bị dẫn vào hành vi học tập không phù hợp**.
 
 Cân nhắc ba phương án phản hồi khi không chắc chắn:
@@ -175,7 +177,7 @@ Cân nhắc ba phương án phản hồi khi không chắc chắn:
 
 Trường hợp cần phê duyệt hoặc thiếu nguồn, AI không được nói “đã báo TA”, “đã đăng FAQ” khi hành động chưa diễn ra. Câu chữ và trạng thái phải phản ánh đúng những gì prototype đã làm.
 
-### 3.2. Kịch bản trọng tâm A — S5: Nguồn §3.3 có khẳng định sai
+### 3.2. Kịch bản UX-A — Nguồn §3.3 có khẳng định sai
 
 **Tin nhắn:** “Tại sao tài liệu ghi độ lệch chuẩn luôn nhỏ hơn phương sai ạ?”
 
@@ -205,7 +207,7 @@ Trường hợp cần phê duyệt hoặc thiếu nguồn, AI không được n�
 
 **Điểm quan trọng về thiết kế:** chỉ thay lời “Xin lỗi” không giải quyết việc AI trích dẫn và khuếch đại nguồn sai. Cần **cơ chế trạng thái nguồn bất thường**, nút chuyển TA, bước xác nhận và cấm công bố FAQ chưa duyệt.
 
-### 3.3. Kịch bản trọng tâm B — S3: Học viên xin giải hộ bài đang mở
+### 3.3. Kịch bản UX-B — Học viên xin giải hộ bài đang mở
 
 **Tin nhắn:** “Giải luôn bài 3 và cho em đáp số để nộp nhé.”
 
@@ -274,7 +276,15 @@ Trường hợp cần phê duyệt hoặc thiếu nguồn, AI không được n�
 
 **Điều kiện chặn:** nếu câu hỏi có dấu hiệu bài đang mở hoặc đòi “đáp án để nộp”, AI chỉ được cung cấp nguyên tắc và bước đầu. Nếu khó phân biệt bài mở hay bài ôn tập, hỏi lại trạng thái bài thay vì tự giả định bài đã đóng. Nếu hệ thống không kiểm soát được câu trả lời từ tool, không hiển thị phần có thể lộ đáp số, đưa về đường gợi ý an toàn.
 
-**Về thảo luận nội bộ:** bảng là quyết định *đề xuất* của TV2 để cả nhóm duyệt. Sau khi ba thành viên tự xếp, bổ sung vào spec: “TV1 chọn …; TV2 chọn …; TV3 chọn …; nhóm chốt … vì …”. Không tự dựng ý kiến mà các thành viên chưa phát biểu.
+**Biên bản phân quyền cần xác nhận bằng thảo luận thực tế (không điền thay người khác):**
+
+| Người | Mức phân quyền người đó lựa chọn cho `goi_y_bai_tap` | Lý do hoặc phản biện (ghi sau khi trao đổi) |
+|---|---|---|
+| TV1 — Hùng | **Chưa ghi nhận ý kiến** | Chưa có bằng chứng trao đổi trong repo |
+| TV2 — Nghĩa | **Đề xuất C — tự gợi ý có giới hạn, cấm đáp số bài mở** | Giữ khả năng hỗ trợ buổi tối nhưng ngăn lộ lời giải |
+| TV3 — Tùng | **Chưa ghi nhận ý kiến** | Chưa có bằng chứng trao đổi trong repo |
+
+**Phương án đề xuất để nhóm chốt:** C. **Trạng thái:** chưa được xác nhận là quyết định chung. Sau thảo luận, TV2 cập nhật ba ý kiến thật, phương án nhóm thống nhất, phương án đã loại và lý do. Trong prototype đang mô phỏng phương án C; việc code chạy được không thay thế cho đồng thuận của cả nhóm.
 
 ### 4.3. Tách các thao tác dễ nhầm để giảm rủi ro
 
@@ -283,15 +293,19 @@ Trường hợp cần phê duyệt hoặc thiếu nguồn, AI không được n�
 
 Hai luồng này xử lý một lỗi mà việc chỉnh câu chữ không thể khắc phục: gửi hoặc phát tán nội dung trước khi đúng người cho phép.
 
-### 4.4. Thử mức tự chủ trên 3 ca (dự đoán hành vi; nhóm cần bấm prototype để xác nhận)
+### 4.4. Đối chiếu mức tự chủ qua 3 ca và bằng chứng hiện có
 
-| Ca kiểm thử | Tool/mức | AI được làm gì? | Kiểm tra chi phí sai và chờ duyệt |
+Bảng dưới tách biệt **kết quả QA tự động của TV3** (ghi trong `prototype/QA.md` và `prototype/qa-results.json`: 37/37 ca báo đạt) với **kiểm thử chéo bằng tay của nhóm** (chưa có biên bản). Đây là prototype chạy theo kịch bản, không phải hệ thống LLM thật.
+
+| Ca | Chính sách & tool | Bằng chứng từ QA đã có | Kiểm thử chéo TV1/TV2 |
 |---|---|---|---|
-| **S5 — §3.3 sai** | `tra_cuu_tai_lieu`: tự đọc; `chuyen_TA`: chờ người học duyệt; `dang_FAQ`: chờ TA duyệt | Chỉ ra phản ví dụ, gắn “Cần xác minh”; chỉ tạo yêu cầu TA sau xác nhận; không tự đăng FAQ | **Chặn** lặp lại khẳng định sai; **chặn** gửi/đăng tự ý; người học vẫn xem được ví dụ ngay |
-| **S3 — xin giải hộ bài đang mở** | `goi_y_bai_tap`: tự gợi ý trong giới hạn, cấm đáp số | Nêu quy tắc, hỏi người học muốn gợi ý hay kiểm cách làm; không tiết lộ đáp số | **Chặn** làm hộ; không phải đợi TA để nhận gợi ý cơ bản |
-| **Ca thường — hỏi định nghĩa trung vị** | `tra_cuu_tai_lieu`: tự làm | Tra mục có thật, tóm tắt đúng ý, hiện nguồn | **Không chờ duyệt vô ích**; nếu không tìm thấy nguồn phải chuyển sang chế độ giới hạn |
+| **UX-A — §3.3 sai** | `tra_cuu_tai_lieu` tự đọc; `chuyen_TA` cần học viên xác nhận; `dang_FAQ` cần TA duyệt | QA ghi nhận mở được nguồn gốc, ví dụ 0,25 → 0,5; huỷ xác nhận không tạo ticket; gửi lỗi giữ nháp; FAQ chưa duyệt không công bố | **Chưa xác nhận.** Bấm ca §3.3 → Xem nguồn → Đề nghị TA → Huỷ; thử xác nhận và thử lỗi gửi; chuyển màn TA, kiểm tra chưa duyệt không đăng được |
+| **UX-B — bài 3 đang mở** | `goi_y_bai_tap` chỉ gợi ý bước đầu; **cấm** đáp số và lời giải cuối | QA ghi nhận tự nhập số để xin xác nhận không bị AI lặp/xác nhận; bấm gợi ý nhiều lần vẫn không lộ kết quả | **Chưa xác nhận.** Nhập “giải hộ”, sau đó nhập “đáp số em là 15,25, đúng không?” và bấm gợi ý liên tục; ghi chính xác phản hồi |
+| **Bình thường — hỏi trung vị** | `tra_cuu_tai_lieu` tự đọc trong phạm vi nguồn sẵn có | Có logic dữ liệu `mean-median` trong `prototype/fixtures.js`; **chưa có kết quả thử chéo riêng được ghi nhận** | **Chưa xác nhận.** Nhập “Trung vị là gì?”, kiểm tra định nghĩa, mã nguồn và Xem nguồn; ghi đạt/chưa đạt |
 
-**Một mức tự chủ đã thay đổi lời hứa sản phẩm:** không nói “AI sẽ giải mọi bài tập và tự thông báo cho TA”, mà nói: **“AI giải thích theo tài liệu, đưa gợi ý học tập, và chỉ gửi yêu cầu cho TA khi bạn xác nhận.”**
+**Mẫu ghi kết quả thủ công sau khi bấm:** `Ngày giờ — Người thử — Câu nhập — Các nút bấm — Kết quả quan sát — Pass/Fail — Lỗi và sửa đổi`. Không đổi “Chưa xác nhận” thành “Đạt” trước khi thực sự chạy thử. Không khẳng định AI tổng quát đã được kiểm chứng an toàn dựa trên QA kịch bản.
+
+**Lời hứa sản phẩm phù hợp với mức quyền:** “AI giải thích theo tài liệu, đưa gợi ý học tập, và chỉ gửi yêu cầu cho TA khi bạn xác nhận.” Trong prototype, việc gửi/duyệt chỉ mô phỏng trong trình duyệt, chưa liên hệ TA thật.
 
 ### 4.5. Quy tắc khi công cụ gặp lỗi
 
@@ -304,6 +318,8 @@ Hai luồng này xử lý một lỗi mà việc chỉnh câu chữ không thể
 | Người học không phản hồi xác nhận | Không có thao tác gửi hay đăng nào được thực hiện; giữ bản nháp và cung cấp nút quay lại |
 
 ---
+
+
 
 ## §5. Prototype  (chặng 5)
 
