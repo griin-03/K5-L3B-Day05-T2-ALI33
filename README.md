@@ -1,4 +1,4 @@
-# LAB5 · T2 Giáo dục · Nhóm Griin
+# LAB5 · T2 Giáo dục · Nhóm ALI33
 
 Lớp **L3B**. Repo nhóm cho bài Day 05: thiết kế UX khi AI sai và mức tự chủ của trợ lý học bài trong trang khoá học.
 

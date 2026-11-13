@@ -1,4 +1,4 @@
-# Bài nộp LAB5 — T2 · Giáo dục · Nhóm Griin
+# Bài nộp LAB5 — T2 · Giáo dục · Nhóm ALI33
 **Lớp:** L3B · **Bàn / zone:** Chưa cập nhật · **Track:** T2 — Giáo dục
 
 | Họ và Tên | Mã Học Viên | Việc đã làm |
