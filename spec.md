@@ -14,6 +14,7 @@
 
 
 ### 1.1. Lát cắt của track
+- AI đang làm việc trong không gian: “trợ lý học bài trên trang khoá học”.
 - Không gian làm việc: trợ lý học bài trên trang khoá học.
 - Người dùng: học viên đang học muộn tối, không còn ai để hỏi.
 - AI phải quyết định trong từng tình huống: có nên trích dẫn tài liệu, hỏi lại cho rõ, gợi ý từng bước, chuyển cho TA, hay nói thẳng rằng tài liệu không có và cần hỏi giảng viên.
