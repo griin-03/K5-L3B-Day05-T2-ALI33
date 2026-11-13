@@ -369,7 +369,62 @@ Hàng chờ, phản hồi TA và FAQ chỉ lưu trong trình duyệt. Chuyển t
 Đã kiểm tra **37/37 tình huống** trên Chrome bằng file mở trực tiếp, gồm huỷ/xác nhận/rút, duyệt/gỡ, bài đang mở, căn cứ thiếu, bàn phím và mobile 390px. Không có JavaScript exception hoặc request HTTP ra ngoài trong phiên kiểm tra. Bằng chứng: [QA.md](prototype/QA.md), [qa-results.json](prototype/qa-results.json), hash hai ảnh nằm trong JSON. Chưa kiểm tra Safari/Edge, chưa kiểm thử người dùng thật hoặc AI thật. Kết quả này chưa thay cho vòng bấm chéo của nhóm hay ca lạ trong §7.
 
 ## §6. Tốt là gì  (chặng 6 — nhẹ, bỏ được nếu thiếu giờ)
-- 3 tiêu chí Pass/Fail chấm được; thiết kế của nhóm đạt tiêu chí nào trên 2 kịch bản đắt nhất; lỗi còn lại.
+
+### 6.1. Ba tiêu chí Pass/Fail chấm được
+
+1. **Không xác nhận đáp án bài đang mở**  
+   Pass: AI chỉ gợi ý từng bước, không đưa đáp số hoặc xác nhận “đáp án là X” cho bài đang mở.  
+   Fail: AI trả lời trực tiếp đáp số hoặc ngụy trang gợi ý thành lời giải hoàn chỉnh.
+
+2. **Không bịa nguồn/căn cứ**  
+   Pass: AI chỉ trích dẫn nguồn có thật, nêu rõ khi dữ liệu thiếu hoặc nguồn mâu thuẫn, và không nhắc “slide 12” nếu không có dữ liệu.  
+   Fail: AI nói có nguồn/đã báo TA/đã gửi cho TA khi thực tế chưa làm hoặc không có căn cứ.
+
+3. **Có lộ trình cứu người dùng và cứu hệ thống**  
+   Pass: khi không chắc, AI hỏi lại, thu hẹp phạm vi, gợi ý từng bước, hay chuyển TA với trạng thái rõ ràng và xác nhận của người học.  
+   Fail: AI trả lời chắc chắn, không cho đường hỏi lại, không có bước xác nhận hoặc không để người học biết bị giới hạn.
+
+### 6.2. Đánh giá thiết kế trên 2 kịch bản đắt nhất
+
+- **Kịch bản 1: Xin đáp số bài đang mở**  
+  Thiết kế đạt tiêu chí 1 và 3. Người học không còn đường “nhắn xong là AI cho đáp án”, mà được giữ ở chế độ gợi ý từng bước, kiểm tra cách làm và có thể xin TA nếu cần. Đây là điểm đắt nhất vì sai ở đây là học sai ngay và không thể đảo lại.
+
+- **Kịch bản 2: AI bịa nguồn / nói đã báo TA khi không có căn cứ**  
+  Thiết kế đạt tiêu chí 2 và 3. Hệ thống buộc AI phải nói rõ “chưa có căn cứ”, có trạng thái “nháp / chưa gửi / chưa xác minh”, và chỉ tạo chuyển TA sau khi người học xác nhận. Đây là kịch bản đắt nhất vì người học tin ngay và hành động theo đó.
+
+### 6.3. Lỗi còn lại
+
+- Prototype vẫn là mock, nên chưa kiểm được độ mạnh/độ yếu của model trong các câu hỏi ngoài tập dữ liệu dựng.
+- Một số ca quá mơ hồ có thể kéo người học vào vòng hỏi lại nhiều lần nếu không có prompt và luật tối ưu tốt.
+- Chưa có kiểm thử người thật trên toàn bộ người dùng, nên cần thêm vòng demo và feedback thực tế trước khi chốt sản phẩm chính thức.
 
 ## §7. Demo
-- Ca lạ nhận được ở demo: prototype đã làm gì, và nhóm có đổi ý gì sau ca đó không.
+
+### 7.1. Ca lạ nhận được ở demo
+
+Ca lạ lớn nhất là học viên viết:  
+- “đáp án bài 3 là bao nhiêu ạ”  
+- “slide 12 có ghi gì?”  
+
+Hai câu này nằm đúng trong các kịch bản đắt nhất: **vượt thẩm quyền** và **bịa nguồn**. Trong demo, prototype đã làm gì:
+
+- Không xác nhận đáp án bài đang mở.
+- Không nhắc đến slide 12 nếu không có dữ liệu.
+- Chuyển sang gợi ý từng bước và yêu cầu nhấn rõ mục đang hỏi.
+- Nếu học viên muốn gửi cho TA, hiển thị bản xem trước, chờ xác nhận, không tự chuyển ngay.
+
+### 7.2. Sau ca đó, nhóm có đổi ý gì không?
+
+Có. Ban đầu, nhóm có xu hướng nghĩ chỉ cần “nói rõ không có nguồn” là đủ. Nhưng sau demo, nhận ra cần thêm 3 thứ:
+
+1. **Một trạng thái rõ ràng**: “đã gửi / chưa gửi / bản nháp / chờ TA”, để người học không lầm tưởng AI đã thực hiện hành động.
+2. **Một mức chặn rõ ràng**: khi học viên xin đáp án bài đang mở, hệ thống không được hiển thị quá gần với đáp số dù có gợi ý bước đầu.
+3. **Một luồng rút / sửa**: nếu học viên nhận ra AI đã nói nhầm hoặc nhắn sai, phải dễ sửa và không biến thành “AI đã làm rồi mà không thể gỡ”.
+
+Vì vậy, nhóm đã chốt thêm các nút và trạng thái:  
+- `Xem ví dụ`  
+- `Báo phản hồi chưa đúng`  
+- `Xác nhận gửi` / `Hủy` / `Rút yêu cầu`  
+- `Nháp — chờ TA duyệt`  
+
+Nói ngắn gọn: **demo không làm thay đổi trọng tâm thiết kế, nhưng làm mạnh thêm quy tắc an toàn**: cấm xác nhận đáp số, cấm bịa nguồn, và bắt buộc có bước xác nhận trước mọi hành động có hệ quả.
