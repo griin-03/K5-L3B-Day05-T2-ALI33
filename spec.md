@@ -5,7 +5,7 @@
 |---|---|---|
 | Lê Thanh Tùng | 2A202603819 | Chưa cập nhật |
 | Cấn Xuân Nghĩa | 2A202603805  |Chưa cập nhật  |
-|  |  |  |
+|Nguyễn Mạnh Hùng  |2A202603852  |  |
 
 > Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Nhóm bổ sung đủ 3 thành viên và ghi đúng đóng góp sau khi làm.
 
