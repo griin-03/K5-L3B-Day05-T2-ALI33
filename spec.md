@@ -4,9 +4,9 @@
 
 | Họ và Tên | Mã Học Viên | Việc đã làm |
 |---|---|---|
-| Lê Thanh Tùng | 2A202603819 | Chưa cập nhật |
-| Cấn Xuân Nghĩa | 2A202603805 | Chưa cập nhật |
-| Nguyễn Mạnh Hùng | 2A202603852 | Chưa cập nhật |
+| Lê Thanh Tùng | 2A202603819 | Product & Risk Lead | Chủ trì phạm vi sản phẩm, quản lý rủi ro, kiểm thử |
+| Cấn Xuân Nghĩa | 2A202603805 | UX & Autonomy Lead | Thiết kế cách AI giao tiếp, xử lý sai sót và kiểm soát quyền tự chủ |
+| Nguyễn Mạnh Hùng | 2A202603852 | Prototype & UI Lead |Xây dựng prototype tương tác, thể hiện các quyết định thiết kế của nhóm |
 
 > Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Danh sách đã đủ 3 người; nhóm cần xác nhận bàn/zone, chốt thiết kế và cập nhật đóng góp thực tế. Hướng dẫn bắt đầu và cách nộp nằm trong [README](README.md).
 
