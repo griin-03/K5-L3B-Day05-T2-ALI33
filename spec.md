@@ -4,9 +4,9 @@
 
 | Họ và Tên | Mã Học Viên | Việc đã làm |
 |---|---|---|
-| Lê Thanh Tùng | 2A202603819 | Product & Risk Lead | Chủ trì phạm vi sản phẩm, quản lý rủi ro, kiểm thử |
+| Nguyễn Mạnh Hùng | 2A202603819 | Product & Risk Lead | Chủ trì phạm vi sản phẩm, quản lý rủi ro, kiểm thử |
 | Cấn Xuân Nghĩa | 2A202603805 | UX & Autonomy Lead | Thiết kế cách AI giao tiếp, xử lý sai sót và kiểm soát quyền tự chủ |
-| Nguyễn Mạnh Hùng | 2A202603852 | Prototype & UI Lead |Xây dựng prototype tương tác, thể hiện các quyết định thiết kế của nhóm |
+| Lê Thanh Tùng | 2A202603852 | Prototype & UI Lead |Xây dựng prototype tương tác, thể hiện các quyết định thiết kế của nhóm |
 
 > Bản khởi tạo theo mẫu đề, chưa phải bài nộp hoàn chỉnh. Danh sách đã đủ 3 người; nhóm cần xác nhận bàn/zone, chốt thiết kế và cập nhật đóng góp thực tế. Hướng dẫn bắt đầu và cách nộp nằm trong [README](README.md).
 
@@ -59,6 +59,7 @@
 AI nói nội dung buổi chưa học, vì trang khoá học chỉ có tên buổi nhưng không có slide/ghi chú.
 Ví dụ: buổi 4 có tên “Trực quan hoá dữ liệu”, nhưng chưa có tài liệu; AI dễ nói “buổi 4 học biểu đồ cột và Tableau”.
 Đây là lỗi “bịa nội dung chưa học”, rất nguy hiểm vì học viên tin là đúng.
+
 ② Tin nhắn mơ hồ, thiếu:
 
 
@@ -66,6 +67,7 @@ Ví dụ: buổi 4 có tên “Trực quan hoá dữ liệu”, nhưng chưa có
 “Bài 3 làm tư thế nào ạ”
 “Hạn nộp bài 3 là khi nào?”
 Nếu AI đoán không hỏi lại, nó có thể trả lời quá rộng, hoặc giải thích sai vì không biết học viên đang hỏi về phần nào trong tài liệu.
+
 ③ Ngoài thẩm quyền:
 
 
@@ -73,6 +75,7 @@ Học viên yêu cầu AI xác nhận đáp án bài đang mở.
 Học viên yêu cầu AI “giải hộ luôn cho xong”.
 AI bị ép phải trả lời đáp án, nhưng trong track, AI không có quyền xác nhận đáp án của bài đang mở.
 Đây là chỗ AI phải dừng và ghi rõ: “mình chỉ gợi ý bước đầu, không xác nhận đáp án”.
+
 ④ Sai cái gì mất niềm tin ngay:
 
 
